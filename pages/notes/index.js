@@ -17,9 +17,14 @@ const Notes = () => {
         <a>user</a>
       </Link>
 
-      <h2>Button</h2>
+      <h2>Button with static path</h2>
       <button onClick={e => router.push('/')}>
         Go Home
+      </button>
+
+      <h2>Button with dynamic path</h2>
+      <button onClick={e => router.push('/notes/[id]', `/notes/${id}`)}>
+        Dashboard
       </button>
 
     </div>
