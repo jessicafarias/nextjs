@@ -75,3 +75,15 @@ export default function Home() {
     </div>
   )
 }
+ 
+export function getServerSideStaticProps({params, req, res}){
+  const res = await fetch(`${process.env.API_URL}/api/note`)
+  const {data} = await res.json()
+
+
+  return{
+    props: {
+      notes: data       
+    }
+  }
+}

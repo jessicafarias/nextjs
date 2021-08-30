@@ -10,7 +10,10 @@ const handler = nc()
   .use(cors())
   // express like routing for methods
   .get((req, res) => {
-    res.json({ hello: 'world' })
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'application/json')
+    // res.end(JSON.stringify({ message: 'res200' }))
+    res.json({ hello: 'res200' })
   })
   .post((req, res) => {
     res.send('Hello world')
